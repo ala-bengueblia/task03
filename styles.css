@@ -1,0 +1,163 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f0f0, #a0a0a0);
+    animation: backgroundChange 10s infinite alternate;
+}
+
+@keyframes backgroundChange {
+    0% {
+        background: linear-gradient(135deg, #f0f0f0, #a0a0a0);
+    }
+    25% {
+        background: linear-gradient(135deg, #f0f0f0, #c58d14);
+    }
+    50% {
+        background: linear-gradient(135deg, #ffcccc, #d35757);
+    }
+    75% {
+        background: linear-gradient(135deg, #f0f0f0, #2f9aad);
+    }
+    100% {
+        background: linear-gradient(135deg, #f0f0f0, #a8e86c);
+    }
+}
+
+.game-container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    margin: 0 0 20px;
+    color: #333;
+    animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #333;
+    }
+    50% {
+        color: #007bff;
+    }
+    100% {
+        color: #333;
+    }
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    animation: boardFadeIn 1s ease-in-out;
+}
+
+@keyframes boardFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #f9f9f9;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: cellPopIn 0.5s ease-in-out;
+}
+
+@keyframes cellPopIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell:hover {
+    background: #e0e0e0;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: cellHover 0.3s ease-in-out;
+}
+
+@keyframes cellHover {
+    from {
+        background: #f9f9f9;
+    }
+    to {
+        background: #e0e0e0;
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    animation: buttonGlow 2s infinite alternate;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0056b3, #003d80);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: buttonHover 0.3s ease-in-out;
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 10px #007bff;
+    }
+    100% {
+        box-shadow: 0 0 20px #007bff;
+    }
+}
+
+@keyframes buttonHover {
+    from {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+    }
+    to {
+        background: linear-gradient(135deg, #0056b3, #003d80);
+    }
+}
